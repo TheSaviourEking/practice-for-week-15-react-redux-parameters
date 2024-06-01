@@ -6,7 +6,7 @@ import { loadArticles } from '../../store/articleReducer';
 
 const ArticleList = () => {
   const dispatch = useDispatch();
-  const articles = useSelector(state=>state.articleState.entries);
+  const articles = useSelector(state => state.articleState.entries);
 
   useEffect(() => {
     dispatch(loadArticles());
@@ -23,7 +23,7 @@ const ArticleList = () => {
 
       <Switch>
         <Route path='/article/:id'>
-          <SingleArticle />
+          <SingleArticle articles={articles} />
         </Route>
       </Switch>
     </div>
